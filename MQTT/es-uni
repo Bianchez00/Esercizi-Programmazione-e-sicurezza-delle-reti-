@@ -1,0 +1,4 @@
+mosquitto_sub -t "universita/#"
+mosquitto_sub -t "universita/personale/#"
+mosquitto_sub -t "universita/personale/#"
+mosquitto_sub -t "universita/personale/studenti"

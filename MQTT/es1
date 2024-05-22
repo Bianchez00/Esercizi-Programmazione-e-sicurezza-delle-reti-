@@ -1,0 +1,2 @@
+mosquitto_sub -t "temperatura"
+mosquitto_pub -m "22" -t "temperatura"
