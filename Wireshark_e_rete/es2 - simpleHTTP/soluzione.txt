@@ -1,0 +1,50 @@
+1. È possibile modifcare il colore dei pacchetti cambiando le regole tramite
+	il menù "Visualizza/Regole di colorazione...".
+	
+
+2. Il primo pacchetto contiene l'IP sorgente 157.27.252.202 e l'IP destinazione 157.27.10.10.
+	Il secondo pacchetto è una risposta al primo e contiene l'IP sorgente 157.27.10.10 e
+	l'IP destinazione 157.27.252.202.
+
+	Il primo pacchetto all'interno del payload ha una query al DNS per capire l'indirizzo IP
+	del	sito web www.polito.it.
+	Il secondo pacchetto ha all'interno del payload la risposta alla query.
+
+
+3. Il terzo pacchetto ha indirizzo IP 157.27.252.202 e destinazione 130.192.73.1, avente protocollo
+	di trasporto TCP.
+	
+	L'IP sorgente corrisponde a quello di chi ha eseguito una richiesta al server DNS per trovare
+	l'indirizzo IP del sito www.polito.it. Nel terzo pacchetto l'indirizzo di destinazione è
+	130.192.73.1 ed è lo stesso comunicato dal server DNS e visibile a livello di applicaione nel
+	pacchetto numero 2.
+
+
+4. Il sesto pacchetto ha indirizzo IP sorgente 157.27.252.202 e destinazione 130.192.73.1, avente
+	come protocollo di trasporto quello TCP e a livello di applicazione HTTP.
+	
+	I tre pacchetti scambiati prima del primo messaggio HTTP riguardano il three-way handshake.
+	
+
+5. Per vedere solo i pacchetti TCP (compresi quelli HTTP) si applica il filtro "tcp && http".
+	Sono 134 su 823 totali.
+
+
+6. Per vedere solo i pacchetti TCP (esclusi quelli HTTP) si applica il filtro "tcp && !http".
+	Sono 673 au 823 totali.
+	
+	Tali pacchetti vengono utilizzati per effettuare richieste REST, quindi sono pacchetti
+	HTTP di tipo GET: OK.
+	
+	Se il protocollo DNS dei primi due pacchetti avesse utilizzato il protocollo TCP a livello
+	di trasporto, avrebbe usato risorse in più e non sarebbe stato utile poiché avrebbe
+	rallentato la risposta a causa del three-way handshake iniziale.
+	Il numero di pacchetti scambiati sarebbero stati minimo 5, di cui 3 per instaurare la
+	connessione e 2 per scambiarsi le query. Inoltre se una delle due parti avesse voluto concludere
+	la comunicazione sarebbero serviti altri 3 pacchetti, per un totale di 8.
+
+
+7. Si seleziona il pacchetto numero 3 e si esegue "Analizza/Segui/Flusso TCP".
+	Si possono leggere le varie pagine HTTP inviate dal sito www.polito.it al mittente.
+	Inoltre è possibile osservare anche l'invio di altri dati come file. Il messaggio contenuto
+	nel payload è il codice della pagina web del polito.

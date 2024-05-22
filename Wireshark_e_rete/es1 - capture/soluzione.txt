@@ -1,0 +1,56 @@
+1. Con il livello Data-Link si intende il livello 2 (livello di collegamento).
+	Tra i vari protocolli disponibili, nel pacchetto numero 9 viene utilizzato il
+	protocollo Ethernet. Questo lo si può vedere guardando l'header del pacchetto.
+	
+	Wireshark riesce a ottenere i pacchetti dall'interfaccia di rete interessata
+	dall'utente grazie alla libreria "libpcap". Per analizzare il pacchetto ha bisogno
+	di una serie di strumenti che vengono concessi dalla libreria libpcap e non solo.
+	
+	In particolare "Epan" è il motore d'analisi per i pacchetti, avente al suo interno
+	4 strumenti fondamentali.
+
+
+2. L'indirizzo MAC sorgente è: 00:e0:81:24. Questo è un indirizzo di tipo unicast, in
+	quanto preso il primo byte 00, l'ultimo bit, detto bit di indirizzo individuale,
+	è 0 e di conseguenza l'indirizzo è unicast. Se fosse stato 1 poteva essere multicast
+	oppure broadcast.
+	
+	
+3. Il protocollo a livello Network è IPv4 e Wireshark per capirlo utilizza lo stesso
+	meccanismo utilizzato anche per il livello Data-Link.
+
+
+4. Il campo "Header Length" comunica che la lunghezza dell'header è di 20 byte.
+
+
+5. L'indirizzo IP sorgente è: 157.27.252.223. L'indirizzo IP destinazione è: 157.27.252.255.
+
+
+6. Il tipo di protocollo utilizzato è visibile nel campo "Protocol", ossia l'UDP. Wireshark
+	riesce a capirlo per gli stessi motivi spiegati per il protocollo Ethernet.
+	
+	
+7. La porta sorgente e destinazione sono 631.
+
+
+8. Si crea un filtro scrivendo "arp" nella barra dei filtri.
+
+
+9. Dopo l'applicazione del filtro rimangono il 63.6% dei pacchetti (visualizzabile in basso a destra).
+
+
+10. Nel filtro si scrive "eth.dst == 00:01:e6:57:4b:e0", così da visualizzare solo i
+	pacchetti che hanno quella destinazione MAC. Il risultato è il pacchetto 12.
+	
+
+11. Dopo l'applicazione del precedente filtro rimane lo 0.4% dei pacchetti.
+
+
+12. Per visualizzare i pacchetti con destinazione broadcast si applica:
+	"eth.dst == ff:ff:ff:ff:ff:ff".
+	
+
+13. Il protocollo ARP viene utilizzato per conoscere gli indirizzi MAC degli altri host
+	e per conoscere i MAC in una rete privata. QUindi questo protocollo lavora principalmente
+	sul canale broadcast dato che deve aggiornare spesso le varie tabelle di ARP.
+	Il risultato del filtro è di 228 pacchetti (83.8%).

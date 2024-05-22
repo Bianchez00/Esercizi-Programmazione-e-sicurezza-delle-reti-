@@ -1,0 +1,33 @@
+1. Si trovano 1392 pacchetti all'interno. A livello di trasporto vengono usati due protocolli:
+	UDP e TCP.
+	
+	Con il protocollo UDP a livello di trasporto, a livello di applcazione viene utilizzato solo
+	il protocollo DNS.
+	
+	Con il protocollo TCP a livello di trasporto, a livello di applicazione vengono usati:
+	- SSH
+	- Short Frame
+	- HTTP
+	- FTP
+	- Data
+
+	Tali statistiche sono ottenibili andando su "Statistiche/Gerarchie di protocolli".
+	
+
+2. Provando a filtrare ogni protocollo a livello di applicazione, si ottiene:
+	- SSH: c'è uno scambio di dati tra client e server. La conversazione è illeggibile poiché
+		criptata.
+	
+	- HTTP: c'è una serie di richieste GET da parte del client e una serie di risposte OK da
+		parte del server.
+	
+	- FTP: c'è una serie di messaggi che sembra un tentativo da parte del client di login.
+	
+	Per vedere tutte le possibili conversazioni e tutti i possibili stream che è possibile
+	seguire, è necessario andare su "Statistiche/Conversazioni".
+
+
+3. La differenza tra il contenuto di una connessione TCP per il protocollo FTP e quello per il
+	protocollo SSH, nell'intestazione a livello di TCP, non è molta. La grande differenza è che
+	per il protocollo FTP i dati scambiati sono visibili in chiaro, mentre i dati scambiati con
+	il protocollo SSH sono criptati dal client e dal server.

@@ -1,0 +1,7 @@
+1. Per conoscere le interfacce di rete attive sul PC è necessario utilizzare ifconfig.
+	L'indirizzo IP è accanto alla voce IPv4 e IPv6 per ogni interfaccia utilizzata.
+	La netmask corrispondente è possibile vederla accanto alla voce mask.
+	
+
+2. L'indirizzo IP di www.univr.it è possibile trovarlo tramite il comando "ping".
+	È 157.27.3.60.

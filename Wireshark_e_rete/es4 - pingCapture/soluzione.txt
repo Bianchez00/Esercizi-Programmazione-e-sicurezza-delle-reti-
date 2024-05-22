@@ -1,0 +1,17 @@
+1. Per individuare le richieste ping inviate e ricevute è necessario applicare il filtro icmp.
+	Ciò perché le richieste/risposte ping utilizzano il protocollo ICMP, il quale serve per 
+	trasmettere informazioni riguardanti malfunzionamenti, informazioni di controllo o messaggi.
+	I pacchetti totali sono 22.
+	
+
+2. L'IP sorgente dell'host che esegue le richieste ICMP è 157.27.143.46.
+	L'IP destinazione che risponde alle richieste è 216.58.211.196.
+	L'azienda a cui è intestato l'indirizzo è PaloAlto. Questo dato è possibile ottenerlo
+	guardando a livello logico il protocollo Ethernet e osservando il mittente e la destinazione.
+	
+
+3. Eseguendo il comando "ping www.google.com" si ottiene un RTT medio di circa 10ms.
+	Invece eseguendo il ping del proprio default gataway, il tempo medio RTT è di 2ms.
+	
+	Tale diffeenza è dovuta al fatto che il server Google è più distante rispetto al default
+	gateway del router.

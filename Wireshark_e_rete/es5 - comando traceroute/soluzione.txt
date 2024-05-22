@@ -1,0 +1,5 @@
+1. "traceroute www.google.com" visualizza i router che vengono attraversati.
+
+
+2. Tramite il comando "whois" si possono individuare i nomi delle organizzazioni a cui
+	sono intestati gli IP delle interacce dei router attraversati.
