@@ -1,0 +1,1 @@
+In questo caso non vi è influenza reciproca poiché il protocollo TCP è più restrittivo.
